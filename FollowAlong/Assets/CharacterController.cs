@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] private Rigidbody characterBody;
     [SerializeField] private float speed = 2f;
   
     void Update()
@@ -18,14 +19,15 @@ public class CharacterController : MonoBehaviour
             transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space)  && characterBody.velocity.y <= 0.05f) // stop chain jumping by checking if already in the air
         {
-            ToggleVisibility();
+            Jump();
         }
     }
 
-    private void ToggleVisibility()
+    private void Jump()
     {
-        gameObject.SetActive(!gameObject.activeInHierarchy);
+        characterBody.AddForce(Vector3.up * 500f);
     }
+   
 }
