@@ -17,7 +17,7 @@ public class TriggerArea : MonoBehaviour
 
     private Color GetRandomColor()
     {
-        Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
         return color;
     }
 }
