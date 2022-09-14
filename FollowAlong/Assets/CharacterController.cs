@@ -27,7 +27,20 @@ public class CharacterController : MonoBehaviour
 
     private void Jump()
     {
-        characterBody.AddForce(Vector3.up * 500f);
+        characterBody.AddForce(Vector3.up * 200f);
+    }
+
+    private bool IsTouchingFloor()
+    {
+        RaycastHit hit;
+        // Parameters:
+        // - The center from where we shoot
+        // - Radius of the sphere
+        // - Direction of the sphere
+        // - hit parameter
+        // - Distance the sphere
+        bool result = Physics.SphereCast(transform.position, 0.15f, -transform.up, out hit, 1f);
+        return result;
     }
    
 }
