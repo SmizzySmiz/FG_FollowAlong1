@@ -10,9 +10,9 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Update()
     {
-        bool IsPlayerTurn = playerTurn.IsPlayerTurn();
         if (Input.GetKeyDown(KeyCode.V))
         {
+            bool IsPlayerTurn = playerTurn.IsPlayerTurn();
             if (IsPlayerTurn)
             {
                 TurnManager.GetInstance().TriggerChangeTurn();
