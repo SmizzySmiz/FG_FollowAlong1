@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
     {
           //GameObject collisionObject = collision.gameObject;
           //DestructionFree destruction = collisionObject.GetComponent<DestructionFree>();
-          //if (GetComponent<DestructionFree>())
+         // if (GetComponent<DestructionFree>())
         
           {
             //Destroy(collisionObject);
@@ -42,4 +42,5 @@ public class Projectile : MonoBehaviour
           }
           
     }
+       
 }

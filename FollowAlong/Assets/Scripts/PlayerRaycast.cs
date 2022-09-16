@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerRaycast : MonoBehaviour
 {
-    
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit result;
             bool thereWasHit = Physics.Raycast(transform.position, transform.forward, out result, Mathf.Infinity);
@@ -17,15 +15,8 @@ public class PlayerRaycast : MonoBehaviour
 
             if (thereWasHit)
             {
-                //result.collider.gameObject.GetComponent<MeshRenderer>().material.color = GetRandomColor();
-                Destroy1 otherCharacter = result.collider.GetComponent<Destroy1>();
-                if (otherCharacter != null)
-                {
-                    Destroy(result.collider.gameObject);
-                }
+                result.collider.gameObject.GetComponent<MeshRenderer>().material.color = GetRandomColor();
             }
-
-            
         }
     }
 

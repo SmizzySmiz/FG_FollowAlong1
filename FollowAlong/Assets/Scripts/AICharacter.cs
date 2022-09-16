@@ -5,19 +5,25 @@ using UnityEngine.AI;
 
 public class AICharacter : MonoBehaviour
 {
+    [SerializeField] private PlayerTurn playerTurn;
 
     [SerializeField] private NavMeshAgent agent;
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit result;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out result, 100.0f))
+            bool IsPlayerTurn = playerTurn.IsPlayerTurn();
+            if (IsPlayerTurn)
             {
-                agent.SetDestination(result.point);
+                RaycastHit result;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out result, 100.0f))
+                {
+                    agent.SetDestination(result.point);
+                }
             }
         }
     }
