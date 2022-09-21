@@ -31,11 +31,13 @@ public class CharacterController : MonoBehaviour
 
     private void Jump()
     {
-        characterBody.AddForce(Vector3.up * 200f);
+        characterBody.AddForce(Vector3.up * 300f);
+      //  Debug.LogWarning("Great bathroom break!");
     }
 
     private bool IsTouchingFloor()
     {
+       // Debug.LogWarning ("Ooh, toilet!");
         RaycastHit hit;
         // Parameters:
         // - The center from where we shoot
