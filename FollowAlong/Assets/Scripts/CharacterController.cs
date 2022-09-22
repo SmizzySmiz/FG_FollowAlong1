@@ -5,9 +5,9 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private Rigidbody characterBody;
-    [SerializeField] private float speed = 2f;
     [SerializeField] private PlayerTurn playerTurn;
-
+    [SerializeField] private float speed = 2f;
+    
     void Update()
     {
         if(playerTurn.IsPlayerTurn())
