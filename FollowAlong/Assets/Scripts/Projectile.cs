@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float weaponDamage;
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private GameObject damageIndicatorPrefab;
     private bool isActive;
@@ -28,14 +29,14 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-          //GameObject collisionObject = collision.gameObject;
-          //DestructionFree destruction = collisionObject.GetComponent<DestructionFree>();
-         // if (GetComponent<DestructionFree>())
+          GameObject collisionObject = collision.gameObject;
+          DestructionFree destruction = collisionObject.GetComponent<DestructionFree>();
+          if (GetComponent<DestructionFree>())
         
           {
-            //Destroy(collisionObject);
-            GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
-            damageIndicator.transform.position = collision.GetContact(0).point;
+            Destroy(collisionObject);
+            //GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
+            //damageIndicator.transform.position = collision.GetContact(0).point;
             
             Destroy(gameObject);
                         

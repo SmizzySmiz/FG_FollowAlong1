@@ -4,31 +4,63 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    /* [SerializeField] private Rigidbody characterBody;
+     [SerializeField] private TurnManager playerturn;
+     [SerializeField] private float rotationSpeed;
+     [SerializeField] private float walkingSpeed;
+
+     void Update()
+     {
+
+         {
+             if (Input.GetAxis("Horizontal") != 0)
+             {
+                // ActivePlayer currentPlayer = playerturn.IsPlayerTurn();
+                 transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World);
+             }
+
+             if (Input.GetAxis("Vertical") != 0)
+             {
+                 //ActivePlayer currentPlayer = manager.GetCurrentPlayer();
+                 transform.Translate(transform.forward * walkingSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
+             }
+
+             if (Input.GetKeyDown(KeyCode.X))
+             {
+                 //ActivePlayer currentPlayer = manager.GetCurrentPlayer();
+                 GetComponent<CharacterWeapon>().ShootLaser();
+             }
+             if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
+             {
+                 Jump();
+             }
+         }
+     } */
     [SerializeField] private Rigidbody characterBody;
-    [SerializeField] private PlayerTurn playerTurn;
-    [SerializeField] private float speed = 2f;
-    
-    void Update()
-    {
-        if(playerTurn.IsPlayerTurn())
-        {
-            if (Input.GetAxis("Horizontal") != 0)
-            {
-                transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
-            }
+      [SerializeField] private PlayerTurn playerTurn;
+      [SerializeField] private float speed = 2f;
 
-            if (Input.GetAxis("Vertical") != 0)
-            {
-                transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
-            }
+      void Update()
+      {
+          if(playerTurn.IsPlayerTurn())
+          {
+              if (Input.GetAxis("Horizontal") != 0)
+              {
+                  transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
+              }
 
-            if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
-            {
-                Jump();
-            }
-        }
-    }
+              if (Input.GetAxis("Vertical") != 0)
+              {
+                  transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
+              }
 
+              if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
+              {
+                  Jump();
+              }
+          }
+      }
+     
     private void Jump()
     {
         characterBody.AddForce(Vector3.up * 300f);
