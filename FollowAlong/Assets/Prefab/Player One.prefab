@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 0}
+  weaponBarrel: {fileID: 0}
+  damage: 50
 --- !u!114 &7619365519079715533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterBody: {fileID: 7619365519079715528}
-  speed: 2
   playerTurn: {fileID: 7619365519079715536}
+  speed: 4
 --- !u!114 &7619365519079715543
 MonoBehaviour:
   m_ObjectHideFlags: 0

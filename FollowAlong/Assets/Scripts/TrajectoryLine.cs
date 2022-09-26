@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TrajectoryLine : MonoBehaviour
 {
-    [SerializeField] private GameObject projectilePrefab;
+    //[SerializeField] private GameObject projectilePrefab;
     [SerializeField] private int stepCount = 10;
     [SerializeField] private LineRenderer lineRenderer;
 
     public void DrawCurvedTrajectory(Vector3 force, Vector3 initialPosition)
     {
-        float projectileMass = projectilePrefab.GetComponent<Rigidbody>().mass;
-        Vector3 velocity = (force / projectileMass) * Time.fixedDeltaTime;
+       // float projectileMass = projectilePrefab.GetComponent<Rigidbody>().mass;
+        Vector3 velocity = (force) * Time.fixedDeltaTime;
         float flightDuration = (2 * velocity.y) / -Physics.gravity.y;
         float stepTime = flightDuration / (float)stepCount;
 
