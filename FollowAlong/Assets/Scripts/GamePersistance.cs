@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePersistance : MonoBehaviour
 {
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
+
+    private bool gameEnded = false;
+    [SerializeField] public float restartDelay = 1f;
 
     void Start()
     {
@@ -40,5 +44,21 @@ public class GamePersistance : MonoBehaviour
     {
         GameUI.SaveGame -= SaveGameData;
         GameUI.LoadGame -= LoadGameData;
+    }
+
+    public void EndGame()
+    {
+        if (gameEnded == false)
+        {
+            gameEnded = true;
+            Debug.Log("Game Over");
+            Invoke("GameOver", restartDelay);
+        }
+        
+    }
+    
+    void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

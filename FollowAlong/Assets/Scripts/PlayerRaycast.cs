@@ -17,7 +17,7 @@ public class PlayerRaycast : MonoBehaviour
         //lineRenderer.enabled = IsPlayerTurn;
         if (IsPlayerTurn)
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.F))
         {
             RaycastHit result;
             bool thereWasHit = Physics.Raycast(weaponBarrel.position, weaponBarrel.forward, out result, Mathf.Infinity);
