@@ -17,7 +17,7 @@ public class GamePersistance : MonoBehaviour
         GameUI.LoadGame += LoadGameData;
     }
 
-   public void SaveGameData()
+   public void SaveGameData() // Save location of players 
     {
         PlayerPrefs.SetFloat("player1X", player1.transform.position.x);
         PlayerPrefs.SetFloat("player1Z", player1.transform.position.z);
@@ -28,7 +28,7 @@ public class GamePersistance : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void LoadGameData()
+    public void LoadGameData() // Load locations of players
     {
         float player1x = PlayerPrefs.GetFloat("player1X", 0);
         float player1z = PlayerPrefs.GetFloat("player1Z", 0);
@@ -46,7 +46,7 @@ public class GamePersistance : MonoBehaviour
         GameUI.LoadGame -= LoadGameData;
     }
 
-    public void EndGame()
+    public void EndGame() // End game
     {
         if (gameEnded == false)
         {
@@ -57,7 +57,7 @@ public class GamePersistance : MonoBehaviour
         
     }
     
-    void GameOver()
+    void GameOver() // Send to GameOver screen
     {
         //SceneManager.LoadScene("GameOver");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

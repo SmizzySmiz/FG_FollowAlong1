@@ -13,7 +13,7 @@ public class ActivePlayerHealth : MonoBehaviour
    // private Vector3 initialPosition;
    // private Vector3 initialRotation;
 
-    void Start()
+    void Start() // Set health
     {
         currentHealth = maxHealth;
         //initialPosition = transform.position;
@@ -21,12 +21,12 @@ public class ActivePlayerHealth : MonoBehaviour
         healthBar.fillAmount = 1f;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage) // Take damage & interact with health bar
     {
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth / maxHealth;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0) // Death on 0 health
         {
             // Set back to initial position
             //transform.position = initialPosition;

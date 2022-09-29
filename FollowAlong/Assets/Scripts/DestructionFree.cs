@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class DestructionFree : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // If needed to attach to a object to not be destroyed on weapon hit. Need to be refered to
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

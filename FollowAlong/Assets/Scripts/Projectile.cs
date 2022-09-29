@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
             //GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
             //damageIndicator.transform.position = collision.GetContact(0).point;
             
-            Destroy(gameObject);
+            Destroy(gameObject); // remove projectile prefab after contact with object
                         
           }
           

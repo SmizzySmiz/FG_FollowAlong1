@@ -9,7 +9,7 @@ public class AICharacter : MonoBehaviour
 
     [SerializeField] private NavMeshAgent agent;
 
-    void Update()
+    void Update() // AI Movement when clicking on NavMesh, with player turns added.
     {
 
         if (Input.GetMouseButtonDown(0))

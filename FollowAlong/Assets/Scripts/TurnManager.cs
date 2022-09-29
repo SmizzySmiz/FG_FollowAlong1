@@ -16,7 +16,7 @@ public class TurnManager : MonoBehaviour
     private bool waitingForNextTurn;
     private float turnDelay;
 
-    private void Awake()
+    private void Awake() // Player one to begin turn when game opened
     {
         if (instance == null)
         {
@@ -31,7 +31,7 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
-        if (waitingForNextTurn)
+        if (waitingForNextTurn) 
         {
             turnDelay += Time.deltaTime;
             if (turnDelay >= timeBetweenTurns)
@@ -63,7 +63,7 @@ public class TurnManager : MonoBehaviour
         waitingForNextTurn = true;
     }
 
-    private void ChangeTurn()
+    private void ChangeTurn() // Check which player is active and who is next
     {
         if (currentPlayerIndex == 1)
         {

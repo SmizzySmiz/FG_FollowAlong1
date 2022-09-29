@@ -12,7 +12,7 @@ public class Music : MonoBehaviour
     public bool Always = true;
     public GameObject music;
 
-    public void Awake()
+    public void Awake() // Play BG Music, does not play on top of itself
     {
         if (instance == null)
         {

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    /* [SerializeField] private Rigidbody characterBody;
+    /* Original Movement Script....
+     [SerializeField] private Rigidbody characterBody;
      [SerializeField] private TurnManager playerturn;
      [SerializeField] private float rotationSpeed;
      [SerializeField] private float walkingSpeed;
@@ -41,7 +42,7 @@ public class CharacterController : MonoBehaviour
       [SerializeField] private float speed = 2f;
       [SerializeField] private float rotationSpeed = 50f;
 
-    void Update()
+    void Update() // Player Movement, rotation & jump.
       {
           if(playerTurn.IsPlayerTurn())
           {
@@ -64,15 +65,15 @@ public class CharacterController : MonoBehaviour
           }
       }
      
-    private void Jump()
+    private void Jump() // Jump force - height
     {
         characterBody.AddForce(Vector3.up * 300f);
-      //  Debug.LogWarning("Great bathroom break!");
+      //  Debug.LogWarning("Great");
     }
 
-    private bool IsTouchingFloor()
+    private bool IsTouchingFloor() // Check for contact with the floor.
     {
-       // Debug.LogWarning ("Ooh, toilet!");
+       // Debug.LogWarning ("Ooh");
         RaycastHit hit;
         // Parameters:
         // - The center from where we shoot

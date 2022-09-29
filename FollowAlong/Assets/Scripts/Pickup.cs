@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // Remove pickup object
     {
         Destroy(gameObject);
     }

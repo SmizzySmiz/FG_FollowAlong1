@@ -6,6 +6,8 @@ public class GroundCollisions : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
 
+    // Colour change test
+
     private void OnCollisionEnter(Collision collision)
     {
         meshRenderer.material.color = GetRandomColor();

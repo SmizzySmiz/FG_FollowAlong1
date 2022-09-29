@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerArea : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other) // Change colour trigger area test
     {
         GameObject otherObject = other.gameObject;
         otherObject.GetComponent<MeshRenderer>().material.color = GetRandomColor();

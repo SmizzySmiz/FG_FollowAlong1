@@ -37,7 +37,7 @@ public class CharacterWeapon : MonoBehaviour
 }
    */
 
-    private void Update()
+    private void Update() // Projectile weapon
     {
         bool IsPlayerTurn = playerTurn.IsPlayerTurn();
         lineRenderer.enabled = IsPlayerTurn;

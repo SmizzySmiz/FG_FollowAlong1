@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class PlayerRaycast : MonoBehaviour
 {
-   // [SerializeField] private LineRenderer lineRenderer;
+   // [SerializeField] private LineRenderer lineRenderer;   //LineRenderer not working with weapon, those lines currently removed
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private Transform weaponBarrel;
     [SerializeField] private float damage = 50f;
 
 
-    void Update()
+    void Update() // Can fire weapon if player turn
     {
         bool IsPlayerTurn = playerTurn.IsPlayerTurn();
         //lineRenderer.enabled = IsPlayerTurn;
         if (IsPlayerTurn)
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F)) // Fire and check for a hit
         {
             RaycastHit result;
             bool thereWasHit = Physics.Raycast(weaponBarrel.position, weaponBarrel.forward, out result, Mathf.Infinity);
@@ -29,7 +29,7 @@ public class PlayerRaycast : MonoBehaviour
             //lineRenderer.SetPosition(0, start);
             //lineRenderer.SetPosition(1, end);
 
-            if (thereWasHit)
+            if (thereWasHit) // refer to APH and damage player
             {
                 TurnManager.GetInstance().TriggerChangeTurn();
                                                 
