@@ -59,6 +59,7 @@ public class GamePersistance : MonoBehaviour
     
     void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

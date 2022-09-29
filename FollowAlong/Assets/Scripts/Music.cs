@@ -25,6 +25,15 @@ public class Music : MonoBehaviour
         }
     }
 
+    //Does not work as intended - search for solutions
+    /*public void EndGame()
+    {
+        if(GetComponent<GameOverMenu>())
+        {
+            Destroy(this.gameObject);
+        }        
+    }*/
+
     
  }
 

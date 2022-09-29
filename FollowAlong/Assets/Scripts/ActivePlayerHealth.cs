@@ -33,7 +33,7 @@ public class ActivePlayerHealth : MonoBehaviour
             //transform.eulerAngles = initialRotation;
 
             Destroy(gameObject);
-            FindObjectOfType<GamePersistance>().EndGame();
+            FindObjectOfType<GamePersistance>().EndGame();            
         }
     }
    
