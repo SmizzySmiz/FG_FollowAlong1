@@ -37,7 +37,7 @@ public class GamePersistance : MonoBehaviour
         float player2z = PlayerPrefs.GetFloat("player2Z", 0);
 
         player1.transform.position = new Vector3(player1x, 0, player1z);
-        player2.transform.position = new Vector3(player2x, 0, player1z);
+        player2.transform.position = new Vector3(player2x, 0, player2z);
     }
 
     private void OnDestroy()
